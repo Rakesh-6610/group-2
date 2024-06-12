@@ -124,7 +124,7 @@ function rain(){
     })
     sleep(0).then(() => {rain()});
 }
-rain()
+// rain()
 
 // const cursor = document.querySelector('[data-cursor-dot]');
 // const cursorOutline = document.querySelector('[data-cursor-outline]');
