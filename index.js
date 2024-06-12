@@ -230,7 +230,12 @@ mm.add("(max-width: 10000px)", () => {
         duration: 1
     }, "-=1")
 })
-mm.add("(max-width: 700px)", () => {
+mm.add("(max-width: 1600px)", () => {
+    thome.to(".img_bg", {
+        scale: 1.6,
+    }, "-=1") 
+})
+mm.add("(max-width: 900px)", () => {
     thome.to(".img_bg", {
         scale: 1.4,
         duration: 1
@@ -268,3 +273,25 @@ mm.add("(max-width: 450px)", () => {
 
 
 
+gsap.utils.toArray('.inner').forEach(inner=> {
+    gsap.fromTo(inner,{
+        width:0
+    },{
+        width:'30%',
+        duration:2,
+        scrollTrigger:inner,
+        ease:'circ.out'
+    })
+})
+gsap.fromTo('#circle',{
+    scale:0
+},{
+    scale:1,
+    duration:4
+})
+gsap.fromTo('#button',{
+    opacity:0
+},{
+    opacity:1,
+    duration:2
+})
