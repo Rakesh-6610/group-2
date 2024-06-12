@@ -116,7 +116,7 @@ function rain(){
     })
     gsap.to(raindrop, {
         y: h_height + "px",
-        duration: 0.7, //! controls how much rain can drop in a single second
+        duration: 1, //! controls how much rain can drop in a single second
         ease: "ease.in"
     })
     gsap.set(raindrop, {
@@ -124,7 +124,7 @@ function rain(){
     })
     sleep(0).then(() => {rain()});
 }
-// rain()
+rain()
 
 // const cursor = document.querySelector('[data-cursor-dot]');
 // const cursorOutline = document.querySelector('[data-cursor-outline]');
