@@ -116,7 +116,7 @@ function rain(){
     })
     gsap.to(raindrop, {
         y: h_height + "px",
-        duration: 1, //! controls how much rain can drop in a single second
+        duration: 9.2, //! controls how much rain can drop in a single second
         ease: "ease.in"
     })
     gsap.set(raindrop, {
