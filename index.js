@@ -116,7 +116,7 @@ function rain(){
     })
     gsap.to(raindrop, {
         y: h_height + "px",
-        duration: 9.2, //! controls how much rain can drop in a single second
+        duration: 0.8, //! controls how much rain can drop in a single second
         ease: "ease.in"
     })
     gsap.set(raindrop, {
@@ -209,7 +209,7 @@ loading.set(".loading", {
 })
 
 
-const myText = new SplitType("#my-text")
+const myText = new SplitType(".section-heading")
 var thome = gsap.timeline()
 
 
@@ -256,13 +256,13 @@ mm.add("(max-width: 450px)", () => {
 
 
 
-// gsap.to(".char", {
-//     y:0,
-//     stagger: 0.02,
-//     // delay: 0.2,
-//     duration: 0.4,
-//     scrollTrigger: "#my-text"
-// })
+gsap.to(".char", {
+    y:0,
+    stagger: 0.02,
+    delay: 0.2,
+    duration: 0.4,
+    scrollTrigger: ".section-heading"
+})
 // gsap.to(".hline1", {
 //     width: "100%",
 //     duration: 1,
@@ -294,4 +294,13 @@ gsap.fromTo('#button',{
 },{
     opacity:1,
     duration:2
+})
+gsap.fromTo(".swiper", {
+    y: "100px",
+    opacity: 0.5
+}, {
+    y:0,
+    opacity: 1,
+    duration: 1,
+    scrollTrigger: ".swiper"
 })
