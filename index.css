@@ -623,7 +623,7 @@ main > section {
 }
 @keyframes words {
     0%, 20% {
-        content: "Innovates";
+        content: "Innovators";
     }
     21%, 40% {
         content: "Programmers";
@@ -632,10 +632,10 @@ main > section {
         content: "Physicists";
     }
     61%, 80% {
-        content: "Mathematics";
+        content: "Mathematicians";
     }
     81%, 100% {
-        content: "Writers";
+        content: "Designers";
     }
 }
 @keyframes typing {
