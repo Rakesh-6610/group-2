@@ -210,6 +210,7 @@ loading.set(".loading", {
 
 
 const myText = new SplitType(".section-heading")
+const myText2 = new SplitType(".item-name", {charClass : "learn_char"})
 var thome = gsap.timeline()
 
 
@@ -241,6 +242,12 @@ mm.add("(max-width: 900px)", () => {
         duration: 1
     }, "-=1")
 })
+mm.add("(max-width: 490px)", () => {
+    thome.to(".anib", {
+        width: 0,
+        duration: 0.2
+    }, "-=1")
+})
 mm.add("(max-width: 450px)", () => {
     thome.to(".img_bg", {
         scale: 1.1,
@@ -262,6 +269,13 @@ gsap.to(".char", {
     delay: 0.2,
     duration: 0.4,
     scrollTrigger: ".section-heading"
+})
+gsap.to(".learn_char", {
+    y:0,
+    stagger: 0.02,
+    delay: 0.2,
+    duration: 0.4,
+    scrollTrigger: ".item-name"
 })
 // gsap.to(".hline1", {
 //     width: "100%",
@@ -303,4 +317,46 @@ gsap.fromTo(".swiper", {
     opacity: 1,
     duration: 1,
     scrollTrigger: ".swiper"
+})
+gsap.fromTo(".learn-py", {
+    backgroundImage : "none"
+}, {
+    backgroundImage: 'url("./images/bg_animated.svg")',
+    // duration :0.2,
+    scrollTrigger: ".python-article"
+})
+gsap.fromTo(".python-media", {
+    y: "100px",
+    opacity: 0.5
+}, {
+    y: 0,
+    opacity: 1,
+    duration: 1,
+    scrollTrigger: ".python-media"
+})
+let count = 0
+function text() {
+    if (count == 0) {
+        new TypeIt(".short-dis", {
+            strings: "Python is a high-level, general-purpose, and very popular programming language. Python programming language (latest Python 3) is being used in web development, and Machine Learning applications, along with all cutting-edge technology in Software Industry.",
+            speed: 50,
+            // loop: true,
+        }).go();
+        count++
+    }
+}
+
+ScrollTrigger.create({
+    trigger: ".item-name",
+    onEnter: text,
+});
+
+gsap.utils.toArray('.fline').forEach(fline => {
+    gsap.fromTo(fline, {
+        width : 0
+    }, {
+        width : "75%",
+        duration : 1,
+        scrollTrigger : fline
+    })
 })
